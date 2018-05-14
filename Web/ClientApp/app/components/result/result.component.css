@@ -1,0 +1,129 @@
+﻿body {
+    background-repeat: no-repeat;
+    color: rgba(249, 249, 249, 1);
+    font-family: verdana;
+    font-size: 17px;
+}
+h2 {
+    margin-top: 20px;
+    margin-bottom: 0px;
+}
+.container-text {
+    background-color: #0053A0;
+    border-radius: 5px;
+}
+.provider-text {
+    padding-left: 15px;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    color:#fff;
+}
+.padding12 {
+    padding-bottom: 12px
+}
+.form-group-text {
+    margin-left: 14px;
+    margin-right: 12px;
+}
+.btn-group-text {
+    margin-left: 7px;
+    margin-right: 12px;
+}
+
+agm-map {
+    height: 300px;
+}
+.grid-display {
+    margin: 15px 10px;  
+    height: 100%;
+}
+.marginbottom10 {
+    margin-bottom: 10px;
+}
+
+.search-results {
+    height: 100%;
+}
+
+.title {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,.5);
+    color: white;
+    width: 100%;
+}
+
+    .title small {
+        color: #eaeaea;
+    }
+
+#divLoading {
+    display: none;
+}
+
+    #divLoading.show {
+        display: block;
+        position: fixed;
+        z-index: 100;
+        background-image: url('http://loadinggif.com/images/image-selection/3.gif');
+        background-color: #666;
+        opacity: 0.4;
+        background-repeat: no-repeat;
+        background-position: center;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        top: 0;
+    }
+
+#loadinggif.show {
+    left: 50%;
+    top: 50%;
+    position: absolute;
+    z-index: 101;
+    width: 32px;
+    height: 32px;
+    margin-left: -16px;
+    margin-top: -16px;
+}
+
+div.content {
+    width: 1000px;
+    height: 1000px;
+}
+
+.specilizationName {
+    font-weight: bold;
+    font-size: 16px;
+}
+.facilityName {
+    color: #444;
+    font-size: 16px;
+}
+.mailingPhone {
+    color: #03a5f5
+}
+.fax {
+    color: #03a5f5
+}
+.providerName {
+    color: #0892f7;
+    font-size: 28px;
+}
+.phoneText {
+    margin-top: 10px;
+}
+.marginLeft5{
+    margin-left:5px;
+}
+hr {
+    height: 1px;
+    border: none;
+    color: #333;
+    background-color: #333;
+}
+.fontSizeColor {
+    font-size: 48px;
+    color: #0053A0;
+}

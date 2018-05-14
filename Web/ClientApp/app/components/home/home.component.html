@@ -1,0 +1,42 @@
+<h2><img src="../../../dist/assets/images/img2.png" width="73%" height="50%" /></h2>
+<div id="divLoading" *ngIf="spinner" class="show">
+</div>
+<div class="container-fluid container-style">
+    <div class="row">
+        <div class="form-group">
+            <form (ngSubmit)="groupSubmit()">
+                <div class="col-sm-6">
+                    <label class="label-group" style="">I know my group:</label>
+                    <input type="text" class="form-control textbox-style" placeholder="Enter your Group Name or Group Number..."
+                           name="group" maxlength="75" minlength="3" (input)="ClearErrorMsg('group')" [(ngModel)]="groupNameOrNumber" />
+                    <div *ngIf="emptyCheckGroup" class="alert alert-danger col-xs-push-12 margintop">
+                        {{groupErrorText}}
+                    </div>
+                    <div class="col-sm-6 button-div-style">
+                        <button type="submit" class="btn btn-success">
+                            <span class="glyphicon glyphicon-search"></span> Find my group
+                        </button>
+                    </div>
+                </div>
+            </form>
+            <div class="form-group">
+                <form (ngSubmit)="planSubmit()">
+                    <div class="col-sm-6">
+                        <label class="label-group">I know my plan name:</label>
+                        <input type="text"
+                               class="form-control textbox-style" placeholder="Enter your Plan Name..."
+                               name="plan" maxlength="75" minlength="3" (input)="ClearErrorMsg('plan')" [(ngModel)]="planName" />
+                        <div *ngIf="emptyCheckPlan" class="alert alert-danger margintop">
+                            {{PlanErrorText}}
+                        </div>
+                        <div class="col-sm-6 button-div-style">
+                            <button type="submit" class="btn btn-success">
+                                <span class="glyphicon glyphicon-search"></span> Find my plan
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

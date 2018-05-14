@@ -1,0 +1,13 @@
+body {
+    background-repeat: no-repeat;
+    color: rgba(249, 249, 249, 1);
+    font-family: verdana;
+    font-size: 17px;
+}
+
+@media (max-width: 767px) {
+    /* On small screens, the nav menu spans the full width of the screen. Leave a space for it. */
+    .body-content {
+        padding-top: 50px;
+    }
+}

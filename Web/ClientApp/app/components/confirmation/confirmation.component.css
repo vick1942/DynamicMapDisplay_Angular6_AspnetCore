@@ -1,0 +1,43 @@
+﻿.form-control {
+    font-size: 11px;
+}
+
+body {
+    background-repeat: no-repeat;
+    color: rgba(249, 249, 249, 1);
+    font-family: verdana;
+    font-size: 17px;
+}
+
+h2 {
+    margin-top: 20px;
+    margin-bottom: 0px;
+}
+
+.confirmation-container {
+    background-color: #0053A0;
+    border-radius: 5px;
+}
+.text-confirmation {
+    padding-left: 12px;
+    padding-bottom: 20px;
+    color: #fff;
+}
+.btn-toolbar-text {
+    padding-left: 12px;
+    padding-bottom: 65px
+}
+
+@media (max-width: 768px) {
+    .btn-responsive {
+        padding: 5px 10px;
+        line-height: 1.5;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+    .btn-responsive {
+        padding: 5px 0px;
+        line-height: 1.5;
+    }
+}

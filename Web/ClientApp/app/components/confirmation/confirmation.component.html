@@ -1,0 +1,33 @@
+﻿<h2><img src="../../../dist/assets/images/img2.png" width="73%" height="50%" /></h2>
+<div class="container-fluid confirmation-container">
+    <div class="row">
+        <table class='table' *ngIf="groupCollection1" style="color: #fff;">
+            <thead>
+                <tr>
+                    <th>Select</th>
+                    <th>Group Name</th>
+                    <th>Group Number</th>
+                    <th>Plan Name</th>
+                    <th>Network Code</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let group of groupCollection1; let idx = index">
+                    <td><input type="radio" name="radiogroup" (change)="onSelectionChange(group)" [value]="group.option"></td>
+                    <td>{{ group.groupName }}</td>
+                    <td>{{ group.groupNumber }}</td>
+                    <td>{{ group.planName }}</td>
+                    <td>{{ group.networkCode }}</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="btn-toolbar-text btn-toolbar">
+            <button type="button" [disabled]="!buttonModel" class="btn btn-success btn-responsive btn-lg col-lg-1 col-md-2 col-sm-3 col-xs-3" (click)="confirmationSubmit()">
+                <span class="glyphicon glyphicon-ok"></span> Yes
+            </button>
+            <button type="button" class="btn btn-danger btn-responsive btn-lg col-lg-3 col-md-4 col-sm-5 col-xs-8" [routerLink]="['/home']">
+                <span class="glyphicon glyphicon-remove"></span> I don't see my group or plan.
+            </button>
+        </div>
+    </div>
+</div>

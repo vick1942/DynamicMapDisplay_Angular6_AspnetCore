@@ -1,0 +1,112 @@
+﻿<h2><img src="../../../dist/assets/images/img2.png" width="73%" height="50%" /></h2>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div id="divLoading" *ngIf="spinner" class="show">
+</div>
+<div class="container-fluid container-text">
+    <div class="row">
+        <h2 class="provider-text">How do you want to find your Provider?</h2>
+        <div class="padding12">
+            <div class="dropdown">
+                <div class="row">
+                    <div class="form-group-text">
+                        <div class="col-sm-2 padding12">
+                            <select class='select-option form-control' [(ngModel)]="selectedMile">
+                                <option class='option' *ngFor='let mile of miles' [value]="mile.id">{{mile.value}}</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-2 padding12">
+                            <input type="text" class="form-control" placeholder="Zipcode" [(ngModel)]="zipCode" />
+                        </div>
+                        <div class="col-sm-4 padding12">
+                            <select class='select-option form-control' [(ngModel)]="selectedSpeciality">
+                                <option [ngValue]="undefined">Choose Speciality...</option>
+                                <option class='option' *ngFor='let speciality of specialities' [value]="speciality.codeNumber">{{speciality.speciality}}</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-4 padding12">
+                            <select class='select-option form-control' [(ngModel)]="selectedFacility">
+                                <option [ngValue]="undefined">Choose a facility type...</option>
+                                <option class='option' *ngFor='let facility of facilities' [value]="facility.code">{{facility.providerCategory}}</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-6">
+                            <input type="text" style="max-width:none" class="form-control" placeholder="Provider Name,Facility Name" [(ngModel)]="providerOrFacilityName" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="btn-toolbar btn-group-text padding12">
+            <button type="button" class="btn btn-success btn-responsive btn-lg col-lg-2 col-md-3 col-sm-3 col-xs-5" (click)="searchDetails()">
+                <span class="glyphicon glyphicon-search"></span> Search
+            </button>
+            <button type="button" class="btn btn-danger btn-responsive btn-lg col-lg-2 col-md-3 col-sm-3 col-xs-5" [routerLink]="['/home']">
+                <span class="glyphicon glyphicon-arrow-left"></span> Start Over
+            </button>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div *ngIf="isRecordExist" class="marginbottom10" style="font-size: 32px;color: red;font-weight: bold;">
+        Sorry! No Records Found
+    </div>
+    <div class="row grid-display" infinite-scroll
+         [infiniteScrollDistance]="2"
+         [infiniteScrollThrottle]="200"
+         (scrolled)="onScrollDown(model)">
+        <div *ngFor="let map of maping" class="marginbottom10">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <span class="glyphicons glyphicons-user"></span>
+                                <h3 class="providerName">
+                                    <div *ngIf="map.providerCategory?.length > 0 && map.providerType == 'Facility' ; else providerType">
+                                        <i class="fa fa-hospital-o fontSizeColor"></i>  {{map.providerFullName}}
+                                    </div>
+                                    <ng-template #providerType>
+                                        <i class="fa fa-user-md fontSizeColor"></i>  {{map.providerFirstName}} {{map.providerLastName}} {{map.providerCategory}}
+                                    </ng-template>
+                                </h3>
+                                <div class="specilizationName">{{map.specialization}}</div>
+                                <div class="facilityName">{{map.facility}}</div>
+                                <br />
+                                <address>
+                                    {{map.serviceAddress1}}<br />
+                                    <div *ngIf="map.serviceAddress2?.length > 0">{{map.serviceAddress2}}</div>
+                                    {{map.serviceCity}}, {{map.serviceState}} {{map.serviceZip}}
+                                    <br />
+                                    <div class="phoneText" title={{map.phoneNumber}}>
+                                        <div *ngIf="map.phoneAreaCode?.length > 0; else loggedOut"> <span class="mailingPhone"><span style="color:#444">Phone:</span> ({{map.phoneAreaCode}}) {{map.phoneNumber}}</span></div>
+                                        <ng-template #loggedOut>
+                                            <span class="mailingPhone">Phone: {{map.phoneNumber}}</span>
+                                        </ng-template>
+                                    </div>
+                                </address>
+                                <div *ngIf="map.radiusDistance?.length > 0">
+                                    {{map.radiusDistance}} miles away
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <h3>
+                                    <span class="glyphicon glyphicon-upload"></span> {{groupCollection.networkCode}} Network
+                                </h3>
+                            </div>
+                            <div class="col-md-6">
+                                <agm-map [latitude]="map.latitude" [longitude]="map.longitude" [zoom]="zoom" [disableDefaultUI]="true" [zoomControl]="true">
+                                    <agm-marker [latitude]="map.latitude" [longitude]="map.longitude" [label]="map.label" [markerDraggable]="map.draggable">
+                                        <agm-info-window>
+                                            <strong>{{map.locationPracticeAddress}}</strong>
+                                        </agm-info-window>
+                                    </agm-marker>
+                                </agm-map>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr />
+        </div>
+    </div>
+</div>

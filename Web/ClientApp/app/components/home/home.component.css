@@ -1,0 +1,82 @@
+﻿
+.form-control {
+    font-size: 16px;
+}
+
+.container {
+    padding: 6px 1px 1px 1px;
+}
+
+h1,
+h2,
+h3 {
+    margin-top: 20px;
+    margin-bottom: 0px;
+}
+
+.container-style {
+    background-color: #0053A0;
+    border-radius: 5px;
+}
+
+.label-group {
+    font-weight: normal;
+    padding-bottom: 8px;
+    color: #fff;
+    font-size: 16px;
+    margin-bottom: 0px;
+}
+
+.textbox-style {
+    max-width: none
+}
+
+.button-div-style {
+    padding: 10px 0px 5px 0px
+}
+
+.error-validation {
+    color: red;
+    color: red;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.margintop {
+    margin-top: 5px;
+}
+
+#divLoading {
+    display: none;
+}
+
+    #divLoading.show {
+        display: block;
+        position: fixed;
+        z-index: 100;
+        background-image: url('http://loadinggif.com/images/image-selection/3.gif');
+        background-color: #666;
+        opacity: 0.4;
+        background-repeat: no-repeat;
+        background-position: center;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        top: 0;
+    }
+
+#loadinggif.show {
+    left: 50%;
+    top: 50%;
+    position: absolute;
+    z-index: 101;
+    width: 32px;
+    height: 32px;
+    margin-left: -16px;
+    margin-top: -16px;
+}
+
+div.content {
+    width: 1000px;
+    height: 1000px;
+}
