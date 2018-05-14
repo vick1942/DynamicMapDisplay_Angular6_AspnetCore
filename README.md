@@ -1,5 +1,5 @@
 # DynamicMapDisplay_Angular6_AspnetCore
-To display the dynamic google map and view the distance and location specified within the map with label details using Asp.Net Core 2.0 and Angular 5
+To display the dynamic google map and view the distance and location specified within the map with label details using Asp.Net Core 2.0 and Angular 6
 
 This solution conlcuded of two projects 
 1) Asp.Net Core 2.0 + Angular 6
@@ -35,7 +35,7 @@ API:-
 13) Implemented all CRUD operations with MongoDB using ADO.NET
 14) Used Bson query pattern to prepare the querySet for transaction.
 
-Angular 5:-
+Angular 6:-
 1) Simple Grid implementation for displaying the query result with multiple check-box enable functionality
 2) Used GlobalEventsManager for Emitting BehaviorSubject and Observable 
 3) Implemented infinite-scroll feature for scrolling to achieve pagination
@@ -45,7 +45,7 @@ Angular 5:-
 7) Dsiplaying Labels in the map using agm-info-window attribute
 8) USed Rxjx subscribe observable feature to call API's.
 9) Used environment variables for Prod and DEV
-10) Used Angular 4 + VisualStudio 2017 template for this App
+10) Used Angular 4.2.5 + VisualStudio 2017 template for this App
 11) We are using boot.Browser.ts file for compling,executing and running the application
 12) Implemented NLOG
 13) Used StaticFileOptions in startup.cs to copy the @"wwwroot", @"dist", @"assets", @"Images folders in the DIST
