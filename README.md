@@ -5,7 +5,7 @@ This solution conlcuded of two projects
 1) Asp.Net Core 2.0 + Angular 6
 2) Windows Service
 
-Use these commands to update from Angular 4 to Angular 6
+Use these commands to update from Angular 4 to Angular 6<br />
 npm uninstall -g @angular/cli<br />
 npm cache clean<br />
 npm install -g @angular/cli@latest<br />
@@ -96,4 +96,4 @@ DBQuery.shellBatchSize = 11000;
 Mongo DB connectionstring with Https
 mongodb://UserName:Password@ServerAddress:Port/?ssl=true&replicaSet=databaseName
 
-
+Create your own Temp file for importing files either PDF,XLS,.XLSX,CSV,TXT extensions.
