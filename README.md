@@ -97,3 +97,9 @@ Mongo DB connectionstring with Https
 mongodb://UserName:Password@ServerAddress:Port/?ssl=true&replicaSet=databaseName
 
 Create your own Temp file for importing files either PDF,XLS,.XLSX,CSV,TXT extensions.
+
+
+Angular CLI useful commands
+npm install -g @angular/cli@latest
+cd <my-app>
+ng serve 
